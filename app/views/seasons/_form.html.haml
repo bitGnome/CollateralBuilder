@@ -1,0 +1,8 @@
+%h3 Create a New Season
+= simple_form_for [@season], :html => { :class => 'form-horizontal' } do |f|
+  = f.input :name
+  = f.input :year, :discard_day  => true, :discard_month  => true
+
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to "Cancel", seasons_path, :class => 'btn'

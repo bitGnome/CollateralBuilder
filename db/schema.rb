@@ -11,13 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120611202905) do
+ActiveRecord::Schema.define(:version => 20120611214428) do
 
   create_table "catalogs", :force => true do |t|
     t.string   "name"
     t.integer  "page_count"
     t.date     "drop_date"
     t.string   "size"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "items", :force => true do |t|
+    t.integer  "page_id"
+    t.integer  "asset_id"
+    t.string   "asset_type"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -29,6 +37,34 @@ ActiveRecord::Schema.define(:version => 20120611202905) do
     t.string   "book_type"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "products", :force => true do |t|
+    t.integer  "style_number"
+    t.string   "name"
+    t.decimal  "weight_oz"
+    t.decimal  "price"
+    t.string   "size_range"
+    t.text     "copy"
+    t.string   "fit"
+    t.string   "country_of_origin"
+    t.string   "team"
+    t.string   "bluesign"
+    t.string   "polartec"
+    t.string   "goretex"
+    t.string   "e_style"
+    t.string   "upf"
+    t.string   "status"
+    t.integer  "season_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "seasons", :force => true do |t|
+    t.string   "name"
+    t.date     "year"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

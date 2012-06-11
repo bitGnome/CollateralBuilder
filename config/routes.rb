@@ -1,5 +1,11 @@
 CollateralBuilder::Application.routes.draw do
 
+  resources :seasons
+
+  resources :products
+
+  resources :items
+
   resources :catalogs do
     resources :pages
   end

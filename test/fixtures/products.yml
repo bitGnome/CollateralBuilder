@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  style_number: 1
+  name: MyString
+  weight_oz: 9.99
+  price: 9.99
+  size_range: MyString
+  copy: MyText
+  fit: MyString
+  country_of_origin: MyString
+  team: MyString
+  bluesign: MyString
+  polartec: MyString
+  goretex: MyString
+  e_style: MyString
+  upf: MyString
+  status: MyString
+
+two:
+  style_number: 1
+  name: MyString
+  weight_oz: 9.99
+  price: 9.99
+  size_range: MyString
+  copy: MyText
+  fit: MyString
+  country_of_origin: MyString
+  team: MyString
+  bluesign: MyString
+  polartec: MyString
+  goretex: MyString
+  e_style: MyString
+  upf: MyString
+  status: MyString

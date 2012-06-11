@@ -1,0 +1,21 @@
+%h1 Products
+%table{:class => "table table-striped"}
+  %thead
+    %tr
+      %th ID
+      %th
+        = t("activerecord.attributes.product.style_number", :default => t("activerecord.labels.style_number", :default => "Style_number"))
+      %th Created at
+      %th Actions
+  %tbody
+    - @products.each do |product|
+      %tr
+        %td= product.id
+        %td= link_to product.style_number, product_path(product)
+        %td= product.created_at
+        %td
+          = link_to "Show", product_path(product), :class => 'btn btn-mini'
+          = link_to "Edit", edit_product_path(product), :class => 'btn btn-mini'
+          = link_to "Destroy", product_path(product), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-mini btn-danger' 
+
+= link_to "New", new_product_path, :class => 'btn btn-primary'

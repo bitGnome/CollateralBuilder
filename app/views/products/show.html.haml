@@ -1,0 +1,37 @@
+%label{:class => "label"}= t("activerecord.attributes.product.style_number", :default => t("activerecord.labels.style_number", :default => "Style number")) + ":"
+%p= @product.style_number
+%label{:class => "label"}= t("activerecord.attributes.product.name", :default => t("activerecord.labels.name", :default => "Name")) + ":"
+%p= @product.name
+%label{:class => "label"}= t("activerecord.attributes.product.weight_oz", :default => t("activerecord.labels.weight_oz", :default => "Weight oz")) + ":"
+%p= @product.weight_oz
+%label{:class => "label"}= t("activerecord.attributes.product.price", :default => t("activerecord.labels.price", :default => "Price")) + ":"
+%p= @product.price
+%label{:class => "label"}= t("activerecord.attributes.product.size_range", :default => t("activerecord.labels.size_range", :default => "Size range")) + ":"
+%p= @product.size_range
+%label{:class => "label"}= t("activerecord.attributes.product.copy", :default => t("activerecord.labels.copy", :default => "Copy")) + ":"
+%p= @product.copy
+%label{:class => "label"}= t("activerecord.attributes.product.fit", :default => t("activerecord.labels.fit", :default => "Fit")) + ":"
+%p= @product.fit
+%label{:class => "label"}= t("activerecord.attributes.product.country_of_origin", :default => t("activerecord.labels.country_of_origin", :default => "Country of origin")) + ":"
+%p= @product.country_of_origin
+%label{:class => "label"}= t("activerecord.attributes.product.team", :default => t("activerecord.labels.team", :default => "Team")) + ":"
+%p= @product.team
+%label{:class => "label"}= t("activerecord.attributes.product.bluesign", :default => t("activerecord.labels.bluesign", :default => "Bluesign")) + ":"
+%p= @product.bluesign
+%label{:class => "label"}= t("activerecord.attributes.product.polartec", :default => t("activerecord.labels.polartec", :default => "Polartec")) + ":"
+%p= @product.polartec
+%label{:class => "label"}= t("activerecord.attributes.product.goretex", :default => t("activerecord.labels.goretex", :default => "Goretex")) + ":"
+%p= @product.goretex
+%label{:class => "label"}= t("activerecord.attributes.product.e_style", :default => t("activerecord.labels.e_style", :default => "E style")) + ":"
+%p= @product.e_style
+%label{:class => "label"}= t("activerecord.attributes.product.upf", :default => t("activerecord.labels.upf", :default => "Upf")) + ":"
+%p= @product.upf
+%label{:class => "label"}= t("activerecord.attributes.product.status", :default => t("activerecord.labels.status", :default => "Status")) + ":"
+%p= @product.status
+%label{:class => "label"}= t("activerecord.attributes.product.season_id", :default => t("activerecord.labels.season_id", :default => "Season")) + ":"
+%p= @product.season_id
+
+.form-actions
+  = link_to "Back", products_path, :class => 'btn'
+  = link_to "Edit", edit_product_path(@product), :class => 'btn'
+  = link_to "Delete", product_path(@product), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-danger'

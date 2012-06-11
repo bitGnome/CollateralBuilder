@@ -1,0 +1,21 @@
+%h1 Seasons
+%table{:class => "table table-striped"}
+  %thead
+    %tr
+      %th ID
+      %th
+        = t("activerecord.attributes.season.name", :default => t("activerecord.labels.name", :default => "Name"))
+      %th Created at
+      %th Actions
+  %tbody
+    - @seasons.each do |season|
+      %tr
+        %td= season.id
+        %td= link_to season.name, season_path(season)
+        %td= season.created_at
+        %td
+          = link_to "Show", season_path(season), :class => 'btn btn-mini'
+          = link_to "Edit", edit_season_path(season), :class => 'btn btn-mini'
+          = link_to "Destroy", season_path(season), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-mini btn-danger' 
+
+= link_to "New", new_season_path, :class => 'btn btn-primary'

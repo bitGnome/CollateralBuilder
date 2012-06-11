@@ -1,0 +1,9 @@
+%label{:class => "label"}= t("activerecord.attributes.season.name", :default => t("activerecord.labels.name", :default => "Name")) + ":"
+%p= @season.name
+%label{:class => "label"}= t("activerecord.attributes.season.year", :default => t("activerecord.labels.year", :default => "Year")) + ":"
+%p= @season.year
+
+.form-actions
+  = link_to "Back", seasons_path, :class => 'btn'
+  = link_to "Edit", edit_season_path(@season), :class => 'btn'
+  = link_to "Delete", season_path(@season), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-danger'

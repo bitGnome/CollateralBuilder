@@ -1,0 +1,22 @@
+%h3 Create a New Product
+= simple_form_for @product, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :style_number
+  = f.input :name
+  = f.input :weight_oz
+  = f.input :price
+  = f.input :size_range
+  = f.input :copy
+  = f.input :fit
+  = f.input :team
+  = f.input :bluesign
+  = f.input :polartec
+  = f.input :goretex
+  = f.input :e_style
+  = f.input :upf
+  = f.input :status
+  = f.input :country_of_origin, :as  => :string
+  = f.association :season
+  
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to "Cancel", products_path, :class => 'btn'
