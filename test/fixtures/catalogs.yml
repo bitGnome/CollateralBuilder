@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  page_count: 1
+  drop_date: 2012-06-11
+  size: MyString
+
+two:
+  name: MyString
+  page_count: 1
+  drop_date: 2012-06-11
+  size: MyString

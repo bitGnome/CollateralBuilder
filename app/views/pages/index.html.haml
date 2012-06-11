@@ -1,0 +1,21 @@
+%h1 Pages
+%table{:class => "table table-striped"}
+  %thead
+    %tr
+      %th ID
+      %th
+        = t("activerecord.attributes.page.section_name", :default => t("activerecord.labels.section_name", :default => "Section_name"))
+      %th Created at
+      %th Actions
+  %tbody
+    - @pages.each do |page|
+      %tr
+        %td= page.id
+        %td= link_to page.section_name, page_path(page)
+        %td= page.created_at
+        %td
+          = link_to "Show", page_path(page), :class => 'btn btn-mini'
+          = link_to "Edit", edit_page_path(page), :class => 'btn btn-mini'
+          = link_to "Destroy", page_path(page), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-mini btn-danger' 
+
+= link_to "New", new_page_path, :class => 'btn btn-primary'

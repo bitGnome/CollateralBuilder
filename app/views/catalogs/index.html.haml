@@ -1,0 +1,21 @@
+%h1 Catalogs
+%table{:class => "table table-striped"}
+  %thead
+    %tr
+      %th ID
+      %th
+        = t("activerecord.attributes.catalog.name", :default => t("activerecord.labels.name", :default => "Name"))
+      %th Created at
+      %th Actions
+  %tbody
+    - @catalogs.each do |catalog|
+      %tr
+        %td= catalog.id
+        %td= link_to catalog.name, catalog_path(catalog)
+        %td= catalog.created_at
+        %td
+          = link_to "Show", catalog_path(catalog), :class => 'btn btn-mini'
+          = link_to "Edit", edit_catalog_path(catalog), :class => 'btn btn-mini'
+          = link_to "Destroy", catalog_path(catalog), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-mini btn-danger' 
+
+= link_to "New", new_catalog_path, :class => 'btn btn-primary'

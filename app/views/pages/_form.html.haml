@@ -1,0 +1,8 @@
+= simple_form_for [@book, @page], :html => { :class => 'form-horizontal' } do |f|
+  = f.input :section_name
+  = f.input :order
+
+  .form-actions
+    = link_to "Back", polymorphic_path(@book), :class => 'btn'
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), polymorphic_path([@book, @page]), :class => 'btn'

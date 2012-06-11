@@ -1,0 +1,18 @@
+- model_class = Page.new.class
+%h1=t '.title', :default => model_class.model_name.human.pluralize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:section_name)
+      %th= model_class.human_attribute_name(:order)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - book.pages.each do |page|
+      %tr
+        %td= page.section_name
+        %td= page.order
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), polymorphic_path([book, page], :action  => 'edit'), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), polymorphic_path([book, page]), :method => "delete", :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'
+
+= link_to  "New Catalog Page", polymorphic_path([book, Page.new], :action  => :new), :class => 'btn btn-primary'
