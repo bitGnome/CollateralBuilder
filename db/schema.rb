@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120611214428) do
+ActiveRecord::Schema.define(:version => 20120612000117) do
 
   create_table "catalogs", :force => true do |t|
     t.string   "name"
-    t.integer  "page_count"
     t.date     "drop_date"
     t.string   "size"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "initial_page_count"
   end
 
   create_table "items", :force => true do |t|

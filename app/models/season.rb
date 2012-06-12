@@ -3,4 +3,8 @@ class Season < ActiveRecord::Base
   
   has_many :products
   
+  def name_year
+    "#{name} #{year.year}"
+  end
+  
 end

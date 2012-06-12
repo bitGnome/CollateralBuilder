@@ -79,7 +79,7 @@ class PagesController < ApplicationController
     @page.destroy
 
     respond_to do |format|
-      format.html { redirect_to redirect_to polymorphic_path(@book) }
+      format.html { redirect_to polymorphic_path(@book) }
       format.json { head :no_content }
     end
   end

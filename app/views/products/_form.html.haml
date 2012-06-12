@@ -15,7 +15,7 @@
   = f.input :upf
   = f.input :status
   = f.input :country_of_origin, :as  => :string
-  = f.association :season
+  = f.association :season, :label_method  => :name_year
   
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'

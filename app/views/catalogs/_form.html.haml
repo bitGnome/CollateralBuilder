@@ -1,23 +1,9 @@
-%fieldset
-  %legend
-    = controller.action_name.capitalize
-    /Catalog
-  .control-group
-    = f.label :name, :class => 'control-label'
-    .controls
-      = f.text_field :name, :class => 'text_field'
-  .control-group
-    = f.label :page_count, :class => 'control-label'
-    .controls
-      = f.number_field :page_count, :class => 'number_field'
-  .control-group
-    = f.label :drop_date, :class => 'control-label'
-    .controls
-      = f.date_select :drop_date, :class => 'date_select'
-  .control-group
-    = f.label :size, :class => 'control-label'
-    .controls
-      = f.text_field :size, :class => 'text_field'
+= simple_form_for @catalog, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :name
+  = f.input :drop_date
+  = f.input :size
+  = f.input :initial_page_count, :label  => "Page Count"
+  
   .form-actions
-    = f.submit nil, :class => 'btn btn-primary'
+    = f.button :submit, :class => 'btn-primary'
     = link_to "Cancel", catalogs_path, :class => 'btn'

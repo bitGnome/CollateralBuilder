@@ -1,7 +1,7 @@
 %label{:class => "label"}= t("activerecord.attributes.catalog.name", :default => t("activerecord.labels.name", :default => "Name")) + ":"
 %p= @catalog.name
-%label{:class => "label"}= t("activerecord.attributes.catalog.page_count", :default => t("activerecord.labels.page_count", :default => "Page count")) + ":"
-%p= @catalog.page_count
+%label{:class => "label"}= "Page Count :"
+%p= @catalog.pages.count
 %label{:class => "label"}= t("activerecord.attributes.catalog.drop_date", :default => t("activerecord.labels.drop_date", :default => "Drop date")) + ":"
 %p= @catalog.drop_date
 %label{:class => "label"}= t("activerecord.attributes.catalog.size", :default => t("activerecord.labels.size", :default => "Size")) + ":"

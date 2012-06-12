@@ -1,5 +1,5 @@
 class Catalog < ActiveRecord::Base
-  attr_accessible :drop_date, :name, :page_count, :size
+  attr_accessible :drop_date, :name, :initial_page_count, :size
   
   has_many :pages, :as  => :book, :dependent  => :destroy
   
@@ -11,7 +11,7 @@ class Catalog < ActiveRecord::Base
     
     order = 1
     
-    self.page_count.times do
+    self.initial_page_count.times do
       page = self.pages.new
       page.order = order
       page.section_name = "Page #{order}"
